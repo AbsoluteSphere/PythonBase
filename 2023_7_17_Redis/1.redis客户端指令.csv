@@ -1,0 +1,9 @@
+# 链接redis
+redis-cli
+
+# 测试redis服务是否正常
+ping
+
+# 切换仓库 select 仓库索引
+select 2
+

@@ -1,0 +1,31 @@
+# 保存学生姓名
+set student_name 安娜
+
+# 获取学生姓名: redis默认保存的是二进制数据
+get student_name
+
+# 设置带有过期时间的键值对 10: 10秒之后删除数据
+setex student_name 10 双双
+
+# 批量设置学生信息
+mset name 安娜 age 18 gender 女
+
+# 如何查看当前所有的key
+keys *
+
+# 批量获取key所对应的value
+mget name age gender
+
+# 通过正则表达式匹配指定的key
+keys n*
+
+# 判断当前仓库中是否存在指定的key
+exists name
+
+
+# 判断指定的的key所绑定的value的类型
+type age
+
+# 删除指定的key: 如果key不存在, value必消失 删除key必须指定全名
+del name
+del age gender

@@ -1,0 +1,27 @@
+student_info: {
+    student_name: 安娜,
+    student_age: 18,
+    student_gender: 女
+}
+
+# 使用哈希类型保存学生信息
+# 当前设置方式只能一次设置一个key field value
+hset student_info student_name 安娜
+
+# 批量设置一个学生信息中的所有的key
+hmset student_info student_name 安娜 student_age 18 student_gender 女
+
+# 获取哈希类型中所有的field
+hkeys student_info
+
+# 获取哈希类型中指定的field绑定的value
+hget student_info student_name
+
+# 获取哈希类型中多个指定的field绑定的value
+hmget student_info student_name student_age student_gender
+
+# 获取哈希类型中所有的values
+hvals student_info
+
+# 删除哈希类型中指定的多个field
+hdel student_info student_name student_gender

@@ -1,0 +1,18 @@
+# 创建无序集合
+sadd user_name_1 zhangsan lisi wangwu
+
+# 获取无序集合中的所有元素
+smembers user_name_1
+
+# 删除无序集合中的指定元素
+srem user_name_1 wangwu
+
+# 创建有序集合
+zadd user_name_2 4 lisi 5 wangwu 6 zhaoliu 3 zhangsan
+
+# 获取有序集合中的所有元素
+zrange user_name_2 0 -1
+
+# 删除有序集合中的指定元素
+zrem user_name_2 zhangsan
+

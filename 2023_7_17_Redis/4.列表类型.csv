@@ -1,0 +1,11 @@
+# 列表左插入
+lpush name_1 a b c
+
+# 列表右插入
+rpush name_2 a b c
+
+# 列表元素从左边获取
+lrange name_1 0 -1
+
+# 随堂练习
+lpush test_list a b a b a b
