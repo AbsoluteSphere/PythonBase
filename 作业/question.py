@@ -304,3 +304,129 @@
 # def run():
 #     print('开始执行函数')
 # run()
+
+# class Login:
+#     def __init__(self, admin='zs', pwd='123'):
+#         self.admin = admin
+#         self.pwd = pwd
+#     def __call__(self,function):
+#         def identify():
+#             username = input('请输入用户名: ')
+#             password = input('请输入密码: ')
+#             if username==self.admin and password==self.pwd: #验证输入的数据和装饰器自带的参数是否匹配
+#                 function()
+#             else:
+#                 print('用户名或密码错误')
+#         return identify
+# @Login()
+# def run():
+#     print('开始执行函数')
+# end = True
+# while end:
+#     # 请问我的理解是否正确？
+#     # 若账号密码输入正确，装饰器中调用run()返回None,end变为None
+#     # 若账号密码输入错误，则其实没有调用run()方法,end = run()这一行没有执行,end依旧为True
+#     end = run()
+#     # 账号密码输入正确,打印None，因为没有设return返回值
+#     # 账号密码输入错误,应该是没有执行end=run()但没有打印True，为什么？
+#     print(end)
+#     run()
+
+# 通过异常捕获获得以下字符串里面的字母字符
+# str_1='d52a733i2327ha244i982d23s553b245'
+# str_abc = ''
+# for str in str_1:
+#     try:
+#         int(str)
+#         # print(f'数字不报错{str}')
+#     except Exception as e:
+#         # print(e)
+#         # print(f'字母报错：{str}')
+#         str_abc += str
+# print(str_abc)
+
+# from  threading import Thread
+# import time
+# def task(name):
+#     print('%s is running'%name)
+#     time.sleep(2)
+#     print('%s is done'%name)
+#
+# if __name__ == '__main__':
+#     t = Thread(target=task,args=('线程1',))
+#     # 造线程非常快，因为不用开辟空间了
+#     t.start()
+#     print('主')
+# from threading import Thread
+# # import time
+# # def task(name):
+# #     print(f'{name}是子线程\n')
+# #     time.sleep(1)
+# # if __name__ == '__main__':
+# #     t = Thread(target=task, args=('线程1',))
+# #     t.start()
+# #     print('主线程')
+
+# str = 'I love genshin impact'
+# str.upper()
+# if 'LOVEN' in str:
+#     print('LOVE')
+# else:
+#     print('SINGLE')
+
+# info = [{'name': 'a','sex': 'male'},{'name': 'b'}]
+# for i in info:
+#     try:
+#         i['sex']
+#         print('含有sex的数据: ',i)
+#     except:
+#         print('无sex的数据: ',i)
+
+# list1=['a','b','c']
+# list2=['b','c','d']
+# set1=set(list1)
+# set2=set(list2)
+# same=set1&set2
+# print(same)
+# different=set1^set2
+# print(different)
+
+# with open('old.txt', 'r') as f:
+#     file = f.read()
+# with open('new.txt','w') as f:
+#     f.write(file)
+
+# import pymongo
+# client = pymongo.MongoClient('127.0.0.1',27017)
+# db = client['student_info']
+# collection = db['student']
+# # 1.新增
+# collection.insert_one({'name':'张三', 'age':20,'address':'武汉','habit':'看小说'})
+# # 2.修改
+# collection.update_one({'name':'张三'},{'$set':{'habit':'看动漫'}})
+# # 3.查询
+# query = collection.find()
+# for i in query:
+#     print(i)
+# # 4.删除
+# collection.delete_one({'name':'张三'})
+
+# salaries = {
+#     'xiaoluo': 3000000,
+#     'sishi': 10000,
+#     'dahai': 3000
+# }
+# max_salary = max(salaries, key=lambda x: salaries[x])
+# print(max_salary)
+
+# from redis import Redis
+# redis_client = Redis()
+# # 1.添加
+# redis_client.hmset('user', 'name', '张三', 'age', '22', 'address', '武汉', 'habit', '看小说')
+# # 2.修改
+# redis_client.hset('user', 'habit', '看动漫')
+# # 3.删除
+# redis_client.hdel('user', 'age')
+# # 4.查询
+# data = redis_client.hmget('user', 'name', 'age', 'address', 'habit')
+# print(data.decode('utf-8'))
